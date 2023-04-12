@@ -1,11 +1,11 @@
 {
-  "importMap": "./../import_map.json",
+  "importMap": "./import_map.json",
   "lint": {
     "files": {
-      "include": ["src"]
+      "include": ["main.ts"]
     }
   },
   "tasks": {
-    "dev": "deno run --allow-net --allow-read --allow-write ./src/main.ts"
+    "dev": "deno run --watch --allow-net --allow-read --allow-write ./src/main.ts"
   }
 }
