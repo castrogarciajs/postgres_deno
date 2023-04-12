@@ -1,11 +1,11 @@
-import { load } from "$std/dotenv/mod.ts";
+import { config } from "$x/dotenv@v3.2.2/mod.ts";
 
-load();
+const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT, DB_HOSTNAME } = config();
 
 export const DATABASE_CONFIG = {
-  username: Deno.env.get("DB_USERNAME"),
-  database: Deno.env.get("DB_NAME"),
-  hostname: Deno.env.get("DB_HOSTNAME"),
-  port: Deno.env.get("DB_PORT"),
-  password: Deno.env.get("DB_PASSWORD"),
+  user: DB_USERNAME,
+  database: DB_NAME,
+  hostname: DB_HOSTNAME,
+  port: DB_PORT,
+  password: DB_PASSWORD,
 };
