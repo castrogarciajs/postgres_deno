@@ -1,22 +1,9 @@
-import { Router, Context } from "$x/oak@v12.1.0/mod.ts";
+import { Router } from "$x/oak@v12.1.0/mod.ts";
+import { Services } from "../services/services.ts";
 
 const router = new Router();
+const services = new Services()
 
-router.get("/", (ctx: Context) => {
-  ctx.response.body = [
-    {
-      name: "deno posgresql",
-      books: "http://localhost:8080/api/books",
-    },
-  ];
-});
-
-router.get("/api/books", (ctx: Context) => {
-  ctx.response.body = [
-    {
-      name: "book",
-    },
-  ];
-});
+router.get("/", services.main);
 
 export default router;
