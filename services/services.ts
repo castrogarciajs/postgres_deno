@@ -3,14 +3,14 @@ import { Database } from "../database/database.ts";
 
 export class Services {
   main(ctx: Context) {
-    return (ctx.response.body = [
+    return ctx.response.body = [
       {
         author: "Johan Sebastian",
         name: "Deno REST",
         data: "http://localhost:8080/person",
         LINCESE: "ISC",
       },
-    ]);
+    ];
   }
 
   async get(ctx: Context) {
