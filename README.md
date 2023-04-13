@@ -4,18 +4,35 @@
 
 ## Endpoints
 
-- ``GET /person``: Eset endpoint allows users to get a list of all people in the database.
+- `GET /person`: Eset endpoint allows users to get a list of all people in the database.
 
-- ``POST /person``: Eset endpoint allows users to create a new person in the database. The request body should contain the details of the person you want to create.
+- `POST /person`: Eset endpoint allows users to create a new person in the database. The request body should contain the details of the person you want to create.
 
-- ``PUT /person/:id``: This endpoint allows users to update the details of a specific person in the database. The :id parameter must be replaced with the unique ID of the person you want to update. The request body should contain the new details of the person.
+- `PUT /person/:id`: This endpoint allows users to update the details of a specific person in the database. The :id parameter must be replaced with the unique ID of the person you want to update. The request body should contain the new details of the person.
 
-- ``DELETE /person/:id``: Eset endpoint allows users to remove a specific person from the database. The :id parameter must be replaced with the unique ID of the person you want to remove.
-
+- `DELETE /person/:id`: Eset endpoint allows users to remove a specific person from the database. The :id parameter must be replaced with the unique ID of the person you want to remove.
 
 ## Use
 
-- proceso...
+1. clone project
+```git
+    git clone https://github.com/sebastian009w/postgres_deno.git
+```
+
+2. isntall deps
+```deno
+    deno install
+```
+
+3. host
+```deno
+deno task dev
+```
+
+4. server
+```
+http://localhost:8080
+``` 
 
 ## Author
 
