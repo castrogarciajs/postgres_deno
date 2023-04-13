@@ -1,7 +1,6 @@
 import { Context } from "$x/oak@v12.1.0/mod.ts";
 import { Database } from "../database/database.ts";
 
-
 export class Services {
   main(ctx: Context) {
     return (ctx.response.body = [
@@ -59,6 +58,27 @@ export class Services {
       return ctx.response.body = {
         message: "Person deleting",
       };
+    } catch (error) {
+      const message = ctx.throw(error.messagee);
+      return ctx.response.body = {
+        message,
+      };
+    }
+  }
+
+  async update(ctx: Context) {
+    try {
+      const body = ctx.request.body();
+      const id = ctx.params.id;
+      const decoder = new TextDecoder().decode(await body.value);
+      const { name, lastname } = JSON.parse(decoder);
+
+      const database = new Database();
+      const response = await database.query(
+        "UPDATE task_deno SET name = $1, lastname = $2 WHERE id = $3",
+        [name, lastname, id],
+      );
+      return ctx.response.body = { update: "person" };
     } catch (error) {
       const message = ctx.throw(error.messagee);
       return ctx.response.body = {
