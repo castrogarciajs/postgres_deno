@@ -7,5 +7,6 @@ const services = new Services();
 router.get("/", services.main);
 router.get("/person", services.get);
 router.post("/person", services.save);
+router.delete("/person/:id", services.delete)
 
 export default router;
