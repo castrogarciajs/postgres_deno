@@ -8,6 +8,6 @@
   },
   "tasks": {
     "dev": "deno run -A ./main.ts",
-    "test": "deno run -A test"
+    "test": "deno test -A"
   }
 }
