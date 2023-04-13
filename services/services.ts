@@ -18,7 +18,24 @@ export class Services {
 
       return ctx.response.body = response.rows;
     } catch (error) {
-      return ctx.response.body = "error";
+      return ctx.response.body = "error server";
+    }
+  }
+
+  async save(ctx: Context) {
+    try {
+      const body = ctx.request.body();
+      const decoder = new TextDecoder().decode(await body.value);
+      const { name, lastname } = JSON.parse(decoder);
+
+      const database = new Database();
+      const response = await database.query(
+        "INSERT INTO task_deno(name,lastname) VALUES ($1, $2) RETURNING *",
+        [name, lastname],
+      );
+      ctx.response.body = response.rows;
+    } catch (error) {
+      return ctx.response.body = "error server";
     }
   }
 }
