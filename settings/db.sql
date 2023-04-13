@@ -10,3 +10,5 @@ CREATE TABLE task_deno(
 SELECT * FROM task_deno;
 
 INSERT INTO task_deno(name,lastname) VALUES ('Sebastian', 'Castro');
+
+DELETE FROM task_deno WHERE id = 1;
