@@ -7,7 +7,7 @@ export class Database {
   constructor() {
     this.client = new Client(DATABASE_CONFIG);
   }
-
+  // deploy
   query(query: string, ...args: any[]) {
     const resolve = this.client.queryObject(query, ...args);
     return resolve;
