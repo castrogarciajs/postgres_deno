@@ -7,6 +7,7 @@
     }
   },
   "tasks": {
-    "dev": "deno run --watch --allow-net --allow-read --allow-env  ./main.ts"
+    "dev": "deno run -A ./main.ts",
+    "test": "deno run -A test"
   }
 }
