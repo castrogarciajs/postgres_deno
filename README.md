@@ -16,12 +16,12 @@
 
 1. clone project
 ```git
-    git clone https://github.com/sebastian009w/postgres_deno.git
+git clone https://github.com/sebastian009w/postgres_deno.git
 ```
 
 2. isntall deps
 ```deno
-    deno install
+deno install
 ```
 
 3. host
