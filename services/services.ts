@@ -7,7 +7,7 @@ export class Services {
       {
         author: "Johan Sebastian",
         name: "Deno REST",
-        data: "http://localhost:8080/person",
+        data: "https://deno-deploy-postgres-h782k3srkckg.deno.dev/person",
         LINCESE: "ISC",
       },
     ];
