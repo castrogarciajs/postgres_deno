@@ -6,14 +6,10 @@ export class Database {
 
   constructor() {
     this.client = new Client(DATABASE_CONFIG);
-    this.connect();
   }
 
-  async connect() {
-    await this.client.connect();
-  }
-
-  async close() {
-    await this.client.end();
+  query(query: string, ...args: any[]) {
+    const resolve = this.client.queryObject(query, ...args);
+    return resolve;
   }
 }
