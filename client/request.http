@@ -1,7 +1,1 @@
-POST http://localhost:8080/person HTTP/1.1
-Content-Type: : application/json
-
-{
-  "name": "Lucas",
-  "lastname": "mark"
-}
+GET http://localhost:8080/person HTTP/1.1

@@ -1,12 +1,15 @@
 import { Context } from "$x/oak@v12.1.0/mod.ts";
 import { Database } from "../database/database.ts";
 
+
 export class Services {
   main(ctx: Context) {
     return (ctx.response.body = [
       {
-        name: "deno posgresql",
-        person: "http://localhost:8080/person",
+        author: "Johan Sebastian",
+        name: "Deno REST",
+        data: "http://localhost:8080/person",
+        LINCESE: "ISC",
       },
     ]);
   }
@@ -18,7 +21,10 @@ export class Services {
 
       return ctx.response.body = response.rows;
     } catch (error) {
-      return ctx.response.body = "error server";
+      const message = ctx.throw(error.messagee);
+      return ctx.response.body = {
+        message,
+      };
     }
   }
 
@@ -35,7 +41,29 @@ export class Services {
       );
       ctx.response.body = response.rows;
     } catch (error) {
-      return ctx.response.body = "error server";
+      const message = ctx.throw(error.messagee);
+      return ctx.response.body = {
+        message,
+      };
+    }
+  }
+
+  async delete(ctx: Context) {
+    try {
+      const id = ctx.params.id;
+      const database = new Database();
+      const response = await database.query(
+        "DELETE FROM task_deno WHERE id = $1",
+        [id],
+      );
+      return ctx.response.body = {
+        message: "Person deleting",
+      };
+    } catch (error) {
+      const message = ctx.throw(error.messagee);
+      return ctx.response.body = {
+        message,
+      };
     }
   }
 }
