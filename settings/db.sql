@@ -6,6 +6,7 @@ CREATE TABLE task_deno(
     lastname VARCHAR(50)
 );
 
-INSERT INTO task_deno(name,lastname) VALUES ('Sebastian', 'Castro');
 
 SELECT * FROM task_deno;
+
+INSERT INTO task_deno(name,lastname) VALUES ('Sebastian', 'Castro');

@@ -5,5 +5,6 @@ const router = new Router();
 const services = new Services()
 
 router.get("/", services.main);
+router.get('/person', services.get)
 
 export default router;

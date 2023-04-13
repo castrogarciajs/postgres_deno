@@ -1,9 +1,1 @@
-GET http://localhost:8080
-Content-Type: application/json; charset=UTF-8
-
-[
-    {
-        "name": "deno posgresql",
-        "books": "http://localhost:8080/api/person"
-    }
-]
+GET http://localhost:8080/person
