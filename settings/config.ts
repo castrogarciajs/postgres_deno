@@ -1,5 +1,3 @@
-import "$x/dotenv@v3.2.2/load.ts";
-
 export const DATABASE_CONFIG = {
   user: Deno.env.get("DB_USER"),
   database: Deno.env.get("DB_NAME"),
