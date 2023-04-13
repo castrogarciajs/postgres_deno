@@ -1,9 +1,7 @@
-import "$x/dotenv@v3.2.2/load.ts";
-
 export const DATABASE_CONFIG = {
-  user: Deno.env.get("DB_USERNAME"),
-  database: Deno.env.get("DB_NAME"),
-  hostname: Deno.env.get("DB_HOSTNAME"),
-  port: Deno.env.get("DB_PORT"),
-  password: Deno.env.get("DB_PASSWORD"),
+  user: "postgres",
+  database: "railway",
+  hostname: "containers-us-west-7.railway.app",
+  port: 6828,
+  password: "fCWrWP8zNi6YSc3PHJKl",
 };
